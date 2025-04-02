@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using CollisionPlatform;
 using Characters;
@@ -14,7 +12,6 @@ namespace Player
         {
             if (other.TryGetComponent(out Platform platform) == true)
             {
-                Debug.Log("trigger enter");
                 _charactersCreator.Create();
             }
         }
@@ -23,7 +20,6 @@ namespace Player
         {
             if (other.TryGetComponent(out Platform platform) == true)
             {
-                Debug.Log("trigger exit");
                 _charactersCreator.StopCreate();
             }
         }
