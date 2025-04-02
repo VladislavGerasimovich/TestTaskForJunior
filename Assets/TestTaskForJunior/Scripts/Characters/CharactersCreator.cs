@@ -1,5 +1,6 @@
+using ObjectPool;
+using Score;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Characters
@@ -10,6 +11,8 @@ namespace Characters
         [SerializeField] private BoyMovement _boy;
         [SerializeField] private Transform _spawnPosition;
         [SerializeField] private Transform _targetPosition;
+        [SerializeField] private ScoreView _scoreView;
+        [SerializeField] private BoysPool _boysPool;
 
         private Coroutine _createRoutine;
 
@@ -37,8 +40,14 @@ namespace Characters
 
                 if (duration > _timeOfCreation)
                 {
-                    BoyMovement boymovement = Instantiate(_boy, _spawnPosition.position, Quaternion.identity);
-                    boymovement.Perform(_targetPosition);
+                    if(_boysPool.TryGet(out GameObject gameObject) == true)
+                    {
+                        gameObject.SetActive(true);
+                        gameObject.transform.position = _spawnPosition.position;
+                        BoyMovement boyMovement = gameObject.GetComponent<BoyMovement>();
+                        boyMovement.Perform(_targetPosition);
+                    }
+
                     StopCreate();
                 }
 

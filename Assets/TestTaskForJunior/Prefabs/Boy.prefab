@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 00f1eedc01843864ead960be4b784e46, type: 2}
+    - target: {fileID: 5866666021909216657, guid: fd1ed2f5796ba0a469e2bb213c47aad0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6e3e2eef8a1ba324796a879e6f4efbdf, type: 2}
     - target: {fileID: 7603786706384944740, guid: fd1ed2f5796ba0a469e2bb213c47aad0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -85,6 +89,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd1ed2f5796ba0a469e2bb213c47aad0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2863097866716962409}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd1ed2f5796ba0a469e2bb213c47aad0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5927926828665205491}
   m_SourcePrefab: {fileID: 100100000, guid: fd1ed2f5796ba0a469e2bb213c47aad0, type: 3}
 --- !u!1 &3860655138625073793 stripped
 GameObject:
@@ -103,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed9b5dcc9edcc84eb0d212e1c4fc889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeBeforeDeath: 5
   _destinationSetter: {fileID: 2863097866716962409}
 --- !u!114 &1123591689596870111
 MonoBehaviour:
@@ -123,7 +131,7 @@ MonoBehaviour:
   movement:
     follower:
       rotationSpeed: 600
-      speed: 1.5
+      speed: 2.5
       maxRotationSpeed: 720
       maxOnSpotRotationSpeed: 720
       slowdownTime: 0.5
@@ -178,3 +186,15 @@ MonoBehaviour:
   version: 1073741824
   target: {fileID: 0}
   useRotation: 0
+--- !u!114 &5927926828665205491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3860655138625073793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f184b18e89a0bdc45863723f7cdcad80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
